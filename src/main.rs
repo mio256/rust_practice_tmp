@@ -1,11 +1,12 @@
 fn main() {
-    let s1 = String::from("hello");
-    let s2 = &s1;
-    println!("{}", s1);
-    println!("{}", s2);
+    let s1 = "hello";
 
-    let s1 = String::from("hello");
-    let s2 = s1.clone();
-    println!("{}", s1);
-    println!("{}", s2);
+    let len = calculate_length(s1);
+
+    // '{}'の長さは、{}です
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &str) -> usize {
+    s.len()
 }
