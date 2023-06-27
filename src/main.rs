@@ -1,12 +1,21 @@
 fn main() {
-    let s1 = "hello";
+    struct User {
+        username: String,
+        email: String,
+        sign_in_count: u64,
+        active: bool,
+    }
 
-    let len = calculate_length(s1);
+    let user1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("someusername123"),
+        active: true,
+        sign_in_count: 1,
+    };
 
-    // '{}'の長さは、{}です
-    println!("The length of '{}' is {}.", s1, len);
-}
-
-fn calculate_length(s: &str) -> usize {
-    s.len()
+    let user2 = User {
+        email: String::from("another@example.com"),
+        username: String::from("anotherusername567"),
+        ..user1
+    };
 }
